@@ -1,13 +1,42 @@
 package ge.tbc.testautomation.tests;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import ge.tbc.testautomation.data.Constants;
+import ge.tbc.testautomation.steps.CurrencySteps;
+import ge.tbc.testautomation.steps.MainSteps;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTest {
+    public static final Logger logger = LogManager.getLogger();
+    CurrencySteps currencySteps;
+    MainSteps mainSteps;
+
+    @Parameters("device")
     @BeforeClass
-    public void setUp(){
+    public void setUp(@Optional("chrome") String device){
+        currencySteps = new CurrencySteps(device.equalsIgnoreCase("mobile"));
+        mainSteps = new MainSteps(device.equalsIgnoreCase("mobile"));
+        Configuration.timeout = 8000;
+        Configuration.browser = "chrome";
+//        Configuration.holdBrowserOpen = true;
         open(Constants.TBC_URL);
+        logger.info("Browser is configured and launched");
+        if (device.equalsIgnoreCase("desktop")) {
+            WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1920, 1080));
+        } else if (device.equalsIgnoreCase("mobile")) {
+            WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(390, 844));
+        }
     }
+
+
 }

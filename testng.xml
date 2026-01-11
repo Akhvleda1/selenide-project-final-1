@@ -2,6 +2,17 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Cross-browser testing" thread-count="2" parallel="tests">
-
+<suite name="E2E Testing suite" thread-count="2" parallel="tests">
+    <test name="Desktop tests">
+        <parameter name="device" value="desktop"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.CurrencyScenario"/>
+        </classes>
+    </test>
+    <test name="Mobile tests">
+        <parameter name="device" value="mobile"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.CurrencyScenario"/>
+        </classes>
+    </test>
 </suite>
