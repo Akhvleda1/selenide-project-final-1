@@ -31,4 +31,14 @@ public class BasePage {
             $$x("//div[@class='tbcx-pw-mega-menu-quick-acitons-item__content']/span[contains(text(), ' შეთავაზებები')]")
                     .filter(Condition.visible)
                     .first();
+    private final SelenideElement navLoansItem =
+            $$x("//span[contains(@class,'tbcx-pw-mega-menu-sub-item__title') and text()='სესხები']")
+                    .filter(Condition.visible).first();
+    private final SelenideElement navToConsumerLoans =
+            $x("//span[contains(@class, 'tbcx-pw-mega-menu-sub-item__title') and contains(text(),'სამომხმარებლო')]");
+    private final SelenideElement navToConsumerLoansMobile =
+            $$x("//span[contains(@class, 'tbcx-pw-mega-menu-sub-item__title') and contains(text(),'სამომხმარებლო')]")
+                    .filter(Condition.visible).first();
+
+
 }

@@ -31,6 +31,13 @@ public class BaseSteps {
         return this;
     }
 
+    public BaseSteps clickNavLoansItem(){
+        if (isMobile){
+            basePage.getNavLoansItem().click();
+        }
+        return this;
+    }
+
     public BaseSteps clickCurrencies(){
         if (!isMobile){
             basePage.getNavToCurrenciesButton()
@@ -58,6 +65,19 @@ public class BaseSteps {
                     .click();
         } else{
             basePage.getNavToOffersButtonMobile()
+                    .shouldBe(visible)
+                    .click();
+        }
+        return this;
+    }
+
+    public BaseSteps clickConsumerLoanNavItem(){
+        if (!isMobile){
+            basePage.getNavToConsumerLoans()
+                    .shouldBe(interactable)
+                    .click();
+        }else {
+            basePage.getNavToConsumerLoansMobile()
                     .shouldBe(visible)
                     .click();
         }
