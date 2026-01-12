@@ -23,4 +23,12 @@ public class BasePage {
                     .first();
     private final SelenideElement cookieAcceptButton =
             $x("//div[@class='tbcx-pw-cookie-consent']//button[contains(text(), ' თანხმობა ')]");
+    private final SelenideElement navItemForMe =
+            $x("//div[@class='tbcx-pw-navigation-item__link ng-star-inserted' and contains(text(), ' ჩემთვის ')]");
+    private final SelenideElement navToOffersButton =
+            $x("//div[contains(@class, 'tbcx-pw-mega-menu__additional') and contains(@class, 'show-desktop-up')]//span[text()=' შეთავაზებები']");
+    private final SelenideElement navToOffersButtonMobile =
+            $$x("//div[@class='tbcx-pw-mega-menu-quick-acitons-item__content']/span[contains(text(), ' შეთავაზებები')]")
+                    .filter(Condition.visible)
+                    .first();
 }

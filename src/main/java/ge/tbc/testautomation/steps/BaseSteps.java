@@ -44,4 +44,24 @@ public class BaseSteps {
         return this;
     }
 
+    public BaseSteps hoverOnForMeNavItem(){
+        if (!isMobile){
+            basePage.getNavItemForMe().hover();
+        }
+        return this;
+    }
+
+    public BaseSteps clickOffers(){
+        if (!isMobile){
+            basePage.getNavToOffersButton()
+                    .shouldBe(interactable)
+                    .click();
+        } else{
+            basePage.getNavToOffersButtonMobile()
+                    .shouldBe(visible)
+                    .click();
+        }
+        return this;
+    }
+
 }
