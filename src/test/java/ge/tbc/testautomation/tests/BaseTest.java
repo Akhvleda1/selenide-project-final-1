@@ -3,10 +3,7 @@ package ge.tbc.testautomation.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import ge.tbc.testautomation.data.Constants;
-import ge.tbc.testautomation.steps.AllOffersSteps;
-import ge.tbc.testautomation.steps.CurrencySteps;
-import ge.tbc.testautomation.steps.MainSteps;
-import ge.tbc.testautomation.steps.OffersSteps;
+import ge.tbc.testautomation.steps.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Dimension;
@@ -24,6 +21,8 @@ public class BaseTest {
     MainSteps mainSteps;
     OffersSteps offersSteps;
     AllOffersSteps allOffersSteps;
+    ConsumerLoanSteps consumerLoanSteps;
+    TermsSteps termsSteps;
 
     @Parameters("device")
     @BeforeClass(alwaysRun = true)
@@ -32,6 +31,8 @@ public class BaseTest {
         mainSteps = new MainSteps(device.equalsIgnoreCase("mobile"));
         offersSteps = new OffersSteps(device.equalsIgnoreCase("mobile"));
         allOffersSteps = new AllOffersSteps(device.equalsIgnoreCase("mobile"));
+        consumerLoanSteps = new ConsumerLoanSteps(device.equalsIgnoreCase("mobile"));
+        termsSteps = new TermsSteps(device.equalsIgnoreCase("mobile"));
 
         Configuration.timeout = 8000;
         Configuration.fastSetValue = false;

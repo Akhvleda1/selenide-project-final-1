@@ -7,14 +7,16 @@
         <parameter name="device" value="desktop"/>
         <classes>
 <!--            <class name="ge.tbc.testautomation.tests.CurrencyScenario"/>-->
-            <class name="ge.tbc.testautomation.tests.FilterOffersScenario"/>
+<!--            <class name="ge.tbc.testautomation.tests.FilterOffersScenario"/>-->
+            <class name="ge.tbc.testautomation.tests.LoanCalculator"/>
         </classes>
     </test>
     <test name="Mobile tests">
         <parameter name="device" value="mobile"/>
         <classes>
 <!--            <class name="ge.tbc.testautomation.tests.CurrencyScenario"/>-->
-            <class name="ge.tbc.testautomation.tests.FilterOffersScenario"/>
+<!--            <class name="ge.tbc.testautomation.tests.FilterOffersScenario"/>-->
+            <class name="ge.tbc.testautomation.tests.LoanCalculator"/>
         </classes>
     </test>
 </suite>
