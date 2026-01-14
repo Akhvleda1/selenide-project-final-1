@@ -1,14 +1,10 @@
 package ge.tbc.testautomation.tests;
 
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import ge.tbc.testautomation.util.RetryAnalyzer;
 import ge.tbc.testautomation.util.RetryCount;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.*;
 
 @Test(groups = {"SCRUM T35 - E2E სცენარი - გაფილტრული შეთავაზებების ნახვა"})
 public class FilterOffersScenario extends BaseTest{

@@ -23,6 +23,7 @@ public class BaseTest {
     AllOffersSteps allOffersSteps;
     ConsumerLoanSteps consumerLoanSteps;
     TermsSteps termsSteps;
+    LocationsSteps locationsSteps;
 
     @Parameters("device")
     @BeforeClass(alwaysRun = true)
@@ -33,6 +34,7 @@ public class BaseTest {
         allOffersSteps = new AllOffersSteps(device.equalsIgnoreCase("mobile"));
         consumerLoanSteps = new ConsumerLoanSteps(device.equalsIgnoreCase("mobile"));
         termsSteps = new TermsSteps(device.equalsIgnoreCase("mobile"));
+        locationsSteps = new LocationsSteps(device.equalsIgnoreCase("mobile"));
 
         Configuration.timeout = 8000;
         Configuration.fastSetValue = false;

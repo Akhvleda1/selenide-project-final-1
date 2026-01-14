@@ -84,4 +84,22 @@ public class BaseSteps {
         return this;
     }
 
+    public BaseSteps scrollToLocationsItemMobile(){
+        if (isMobile){
+            basePage.getNavToLocationsMobile().scrollTo();
+        }
+        return this;
+    }
+
+    public BaseSteps clickNavToLocations(){
+        if (!isMobile){
+            basePage.getNavToLocations().click();
+        }else {
+            basePage.getNavToLocationsMobile().click();
+        }
+        return this;
+    }
+
+
+
 }
