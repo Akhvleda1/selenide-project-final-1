@@ -1,8 +1,6 @@
 package ge.tbc.testautomation.tests;
 
 import ge.tbc.testautomation.data.Constants;
-import ge.tbc.testautomation.util.RetryAnalyzer;
-import ge.tbc.testautomation.util.RetryCount;
 import org.testng.annotations.Test;
 
 @Test(groups = {"SCRUM-T34 - E2E სცენარი - ბანკის ვალუტის კურსის გადამოწმება"})
