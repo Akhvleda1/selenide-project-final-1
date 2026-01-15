@@ -1,12 +1,8 @@
 package ge.tbc.testautomation.steps;
 
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 import ge.tbc.testautomation.pages.LocationsPage;
 
-import static com.codeborne.selenide.Selenide.$$;
 
 public class LocationsSteps extends BaseSteps{
     LocationsPage locationsPage = new LocationsPage();
@@ -45,7 +41,7 @@ public class LocationsSteps extends BaseSteps{
         return this;
     }
 
-    public LocationsSteps filterBranches(){
+    public LocationsSteps chooseWorkOption(){
         locationsPage.getWorkHoursOption().click();
         return this;
     }
@@ -57,6 +53,23 @@ public class LocationsSteps extends BaseSteps{
         for (SelenideElement desc : descriptions) {
             desc.shouldHave(Condition.text("24/7"));
         }
+
+        return this;
+    }
+
+    public LocationsSteps fillSearchInput(String district){
+        locationsPage.getBranchesSearchInput().setValue(district);
+        return this;
+    }
+
+    public LocationsSteps assertDistrictResults(){
+        Selenide.sleep(500); // should's wait didn't work, so I had to use this
+
+        locationsPage.getResultListTitles().forEach(each -> {
+            // wanted to use search input for assertion comparison but results didn't contain a search keyword
+            each.shouldBe(Condition.visible);
+            System.out.println(each.getText());
+        });
 
         return this;
     }

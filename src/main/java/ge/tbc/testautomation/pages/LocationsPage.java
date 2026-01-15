@@ -29,5 +29,10 @@ public class LocationsPage extends BasePage{
     private final ElementsCollection descriptions =
             $$(".tbcx-pw-atm-branches-section__list-item-description");
 
+    private final SelenideElement branchesSearchInput =
+            $x("//input[@placeholder='მიუთითე სასურველი ლოკაცია']");
+
+    private final ElementsCollection resultListTitles =
+            $$x("//div[@class='tbcx-pw-atm-branches-section__list-wrapper']/div[contains(@class,'tbcx-pw-atm-branches-section__list')]//div[contains(@class,'tbcx-pw-atm-branches-section__list-item-title-box')]");
 
 }
