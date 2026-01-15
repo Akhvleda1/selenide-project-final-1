@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Test(groups = {"CRUM-T36 - E2E სცენარი - სამომხმარებლო სესხის კალკულატორი"})
-public class LoanCalculator extends BaseTest{
+public class LoanCalculatorScenario extends BaseTest{
     @Test(priority = 1)
     public void navigateToMain(){
         mainSteps

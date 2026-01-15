@@ -1,10 +1,10 @@
 package ge.tbc.testautomation.tests;
 
+import ge.tbc.testautomation.data.Constants;
 import org.testng.annotations.Test;
 
-@Test(groups = {"SCRUM-T37 - E2E სცენარი - მისამართების გვერდზე ფილიალების გაფილტვრა"})
-public class FilterLocationsScenario extends BaseTest{
-
+@Test(groups = {"SCRUM-T38 - E2E სცენარი - ფილიალის მოძებნა რაიონის მიხედვით"})
+public class LocationSearchScenario extends BaseTest{
     @Test(priority = 1)
     public void navigateToMain(){
         mainSteps
@@ -24,20 +24,23 @@ public class FilterLocationsScenario extends BaseTest{
     }
 
     @Test(priority = 3)
-    public void chooseCityAndBranches(){
+    public void filterBranches(){
         locationsSteps
                 .clickCityFilterDropDown()
                 .chooseCityOption()
                 .chooseBranches()
                 .scrollToMap()
-                .assertResultsAppeared();
+                .assertResultsAppeared()
+                .chooseWorkOption()
+                .assertFilteredList();
     }
 
     @Test(priority = 4)
-    public void filterBranches(){
+    public void searchBranchesByDistrict(){
         locationsSteps
-                .chooseWorkOption()
-                .assertFilteredList();
+                .fillSearchInput(Constants.INPUT_DISTRICT)
+                .scrollToMap()
+                .assertDistrictResults();
     }
 
 }

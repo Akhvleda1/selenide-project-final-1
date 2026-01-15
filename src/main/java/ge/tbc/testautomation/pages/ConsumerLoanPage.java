@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class ConsumerLoanPage extends BasePage{
     private final SelenideElement termsButton =
             $$x("//button[contains(@class, 'primary') and contains(., 'პირობები')]").first();
+
     private final SelenideElement cunsomerLoanHeader =
             $$x("//h1[contains(text(), 'სამომხმარებლო სესხი')]").first();
 }

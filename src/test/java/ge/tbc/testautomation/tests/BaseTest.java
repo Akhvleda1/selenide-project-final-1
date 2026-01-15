@@ -7,7 +7,6 @@ import ge.tbc.testautomation.steps.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -39,7 +38,7 @@ public class BaseTest {
         Configuration.timeout = 8000;
         Configuration.fastSetValue = false;
         Configuration.browser = "chrome";
-//        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
         open(Constants.TBC_URL);
         logger.info("Browser is configured and launched");
 
@@ -49,6 +48,5 @@ public class BaseTest {
             WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(390, 844));
         }
     }
-
 
 }
