@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import static com.codeborne.selenide.Selenide.actions;
 
 public class TermsSteps extends BaseSteps{
-    public static final Logger logger = LogManager.getLogger();
     TermsPage termsPage = new TermsPage();
 
     public TermsSteps(boolean isMobile) {
@@ -17,9 +16,7 @@ public class TermsSteps extends BaseSteps{
     }
 
     public TermsSteps assertTermsPageLoaded(){
-        if (!isMobile){
-            termsPage.getTermsPageText().shouldBe(Condition.visible);
-        }
+        termsPage.getTermsPageText().shouldBe(Condition.visible);
         return this;
     }
 
@@ -28,30 +25,20 @@ public class TermsSteps extends BaseSteps{
         return this;
     }
 
-    public TermsSteps moveMoneySlider(){
-        if (!isMobile){
+    public TermsSteps enterMoney(String amount){
+        if (isMobile){
+            termsPage.getMoneyInput().setValue(amount);
+        }else{
             actions().dragAndDropBy(termsPage.getMoneySlider(), 150, 0).perform();
         }
         return this;
     }
 
-    public TermsSteps moveMonthsSlider(){
-        if (!isMobile){
-            actions().dragAndDropBy(termsPage.getMonthsSlider(), -150, 0).perform();
-        }
-        return this;
-    }
-
-    public TermsSteps enterMoneyInput(String amount){
-        if (isMobile){
-            termsPage.getMoneyInput().setValue(amount);
-        }
-        return this;
-    }
-
-    public TermsSteps enterMonthsInput(String months){
+    public TermsSteps enterMonths(String months){
         if (isMobile){
             termsPage.getMonthsInput().setValue(months);
+        } else {
+            actions().dragAndDropBy(termsPage.getMonthsSlider(), -150, 0).perform();
         }
         return this;
     }

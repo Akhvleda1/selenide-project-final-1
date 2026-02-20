@@ -16,8 +16,7 @@ public class LoanCalculatorScenario extends BaseTest{
     @Test(priority = 2)
     public void redirectToConsumerLoanPage(){
         consumerLoanSteps
-                .hoverOnForMeNavItem()
-                .clickBurger()
+                .clickOnForMeNavItem()
                 .clickNavLoansItem()
                 .clickConsumerLoanNavItem();
 
@@ -36,10 +35,8 @@ public class LoanCalculatorScenario extends BaseTest{
     public void calculateMonthlyPayment(){
         termsSteps
                 .scrollToCalculator()
-                .moveMoneySlider() // for desktop
-                .moveMonthsSlider() // for desktop
-                .enterMoneyInput(Constants.MONEY_LOAN_CALCULATOR) // for mobile
-                .enterMonthsInput(Constants.MONTHS_LOAN_CALCULATOR) // for mobile
+                .enterMoney(Constants.MONEY_LOAN_CALCULATOR)
+                .enterMonths(Constants.MONTHS_LOAN_CALCULATOR)
                 .assertMonthlyPayment();
 
         String monthlyPayment = termsSteps.getMonthlyPaymentValue();

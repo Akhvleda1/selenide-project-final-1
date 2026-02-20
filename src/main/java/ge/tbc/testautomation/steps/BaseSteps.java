@@ -16,15 +16,10 @@ public class BaseSteps {
         return this;
     }
 
-    public BaseSteps hoverOnForMyBusinessNavItem(){
+    public BaseSteps clickForMyBusinessNavItem(){
         if (!isMobile){
             basePage.getNavItemForMyBusiness().hover();
-        }
-        return this;
-    }
-
-    public BaseSteps clickBurger(){
-        if (isMobile){
+        }else {
             basePage.getBurgerBar().click();
         }
         return this;
@@ -50,9 +45,11 @@ public class BaseSteps {
         return this;
     }
 
-    public BaseSteps hoverOnForMeNavItem(){
+    public BaseSteps clickOnForMeNavItem(){
         if (!isMobile){
             basePage.getNavItemForMe().hover();
+        }else {
+            basePage.getBurgerBar().click();
         }
         return this;
     }
@@ -98,7 +95,5 @@ public class BaseSteps {
         }
         return this;
     }
-
-
 
 }

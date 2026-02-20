@@ -23,16 +23,20 @@ public class AllOffersSteps extends BaseSteps{
         return this;
     }
 
-    public AllOffersSteps scrollToCheckboxSectionMobile(){
+    public AllOffersSteps scrollToCheckboxSection(){
         if (isMobile){
             allOffersPage.getCheckboxSectionMobile().scrollTo();
+        }else {
+            allOffersPage.getCheckboxSection().scrollTo();
         }
         return this;
     }
 
-    public AllOffersSteps clickCashbackCheckboxMobile(){
+    public AllOffersSteps clickCashbackCheckbox(){
         if (isMobile){
             allOffersPage.getCashbackCheckboxMobile().click();
+        }else {
+            allOffersPage.getCashbackCheckbox().click();
         }
         return this;
     }
@@ -40,20 +44,6 @@ public class AllOffersSteps extends BaseSteps{
     public AllOffersSteps clickEndFilterButtonMobile(){
         if (isMobile){
             allOffersPage.getEndFilterButtonMobile().click();
-        }
-        return this;
-    }
-
-    public AllOffersSteps scrollToCashbackCheckbox(){
-        if (!isMobile){
-            allOffersPage.getCheckboxSection().scrollTo();
-        }
-        return this;
-    }
-
-    public AllOffersSteps clickCashbackCheckbox(){
-        if (!isMobile){
-            allOffersPage.getCashbackCheckbox().click();
         }
         return this;
     }

@@ -15,10 +15,9 @@ public class FilterLocationsScenario extends BaseTest{
     @Test(priority = 2)
     public void navigateToLocationsPage(){
         locationsSteps
-                .clickBurger() // for mobile
+                .clickOnForMeNavItem()
                 .scrollToLocationsItemMobile() // for mobile
-                .hoverOnForMeNavItem() // for desktop
-                .clickNavToLocations(); // for both
+                .clickNavToLocations();
 
         locationsSteps.assertLocationsPageLoaded();
     }

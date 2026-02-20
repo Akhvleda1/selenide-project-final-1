@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 @Getter
 public class TermsPage extends BasePage{
     private final SelenideElement termsPageText =
-            $x("//li[contains(@class, 'tbcx-pw-breadcrumbs__item')]//a[contains(., 'პირობები')]");
+            $x("//button[contains(@class, 'tbcx-pw-tab-menu__item')]//span[contains(., 'პირობები')]");
 
     private final SelenideElement calculatorButton =
             $x("//button[contains(@class,'tbcx-pw-tab-menu__item')]/span[contains(.,'კალკულატორი')]");

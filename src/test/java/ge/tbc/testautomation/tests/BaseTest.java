@@ -26,14 +26,14 @@ public class BaseTest {
 
     @Parameters("device")
     @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional("chrome") String device){
-        currencySteps = new CurrencySteps(device.equalsIgnoreCase("mobile"));
-        mainSteps = new MainSteps(device.equalsIgnoreCase("mobile"));
-        offersSteps = new OffersSteps(device.equalsIgnoreCase("mobile"));
-        allOffersSteps = new AllOffersSteps(device.equalsIgnoreCase("mobile"));
-        consumerLoanSteps = new ConsumerLoanSteps(device.equalsIgnoreCase("mobile"));
-        termsSteps = new TermsSteps(device.equalsIgnoreCase("mobile"));
-        locationsSteps = new LocationsSteps(device.equalsIgnoreCase("mobile"));
+    public void setUp(String device){
+        currencySteps = new CurrencySteps(device.equalsIgnoreCase(Constants.MOBILE));
+        mainSteps = new MainSteps(device.equalsIgnoreCase(Constants.MOBILE));
+        offersSteps = new OffersSteps(device.equalsIgnoreCase(Constants.MOBILE));
+        allOffersSteps = new AllOffersSteps(device.equalsIgnoreCase(Constants.MOBILE));
+        consumerLoanSteps = new ConsumerLoanSteps(device.equalsIgnoreCase(Constants.MOBILE));
+        termsSteps = new TermsSteps(device.equalsIgnoreCase(Constants.MOBILE));
+        locationsSteps = new LocationsSteps(device.equalsIgnoreCase(Constants.MOBILE));
 
         Configuration.timeout = 8000;
         Configuration.fastSetValue = false;
@@ -42,9 +42,9 @@ public class BaseTest {
         open(Constants.TBC_URL);
         logger.info("Browser is configured and launched");
 
-        if (device.equalsIgnoreCase("desktop")) {
+        if (device.equalsIgnoreCase(Constants.DESKTOP)) {
             WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1920, 1080));
-        } else if (device.equalsIgnoreCase("mobile")) {
+        } else if (device.equalsIgnoreCase(Constants.MOBILE)) {
             WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(390, 844));
         }
     }

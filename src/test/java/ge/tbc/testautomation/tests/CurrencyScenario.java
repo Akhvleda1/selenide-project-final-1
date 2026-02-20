@@ -16,8 +16,7 @@ public class CurrencyScenario extends BaseTest{
     @Test(priority = 2)
     public void navigateToCurrencies(){
         currencySteps
-                .hoverOnForMyBusinessNavItem() // for desktop
-                .clickBurger() // for mobile
+                .clickForMyBusinessNavItem()
                 .clickCurrencies();
 
         currencySteps.assertCurrenciesPageLoaded();

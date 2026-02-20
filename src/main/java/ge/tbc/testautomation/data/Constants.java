@@ -6,4 +6,6 @@ public class Constants {
     public static final String MONEY_LOAN_CALCULATOR = "40000";
     public static final String MONTHS_LOAN_CALCULATOR = "24";
     public static final String INPUT_DISTRICT = "მთაწმინდა";
+    public static final String MOBILE = "Mobile";
+    public static final String DESKTOP = "Desktop";
 }

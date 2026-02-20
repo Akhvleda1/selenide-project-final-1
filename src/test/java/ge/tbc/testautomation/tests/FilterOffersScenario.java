@@ -19,8 +19,7 @@ public class FilterOffersScenario extends BaseTest{
     @Test(priority = 2, dependsOnMethods = {"navigateToMain"})
     public void navigateToOffers(){
         mainSteps
-                .hoverOnForMeNavItem()
-                .clickBurger() // for mobile
+                .clickOnForMeNavItem()
                 .clickOffers();
 
         offersSteps.assertOffersPageLoaded();
@@ -40,11 +39,9 @@ public class FilterOffersScenario extends BaseTest{
     public void assertFilterResults(){
         allOffersSteps
                 .clickFilterButtonMobile() // for mobile
-                .scrollToCheckboxSectionMobile() // for mobile
-                .clickCashbackCheckboxMobile() // for mobile
-                .clickEndFilterButtonMobile() // for mobile
-                .scrollToCashbackCheckbox() // for desktop
-                .clickCashbackCheckbox(); // for desktop
+                .scrollToCheckboxSection()
+                .clickCashbackCheckbox()
+                .clickEndFilterButtonMobile(); // for mobile
 
         allOffersSteps
                 .scrollBackUp()

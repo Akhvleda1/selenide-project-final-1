@@ -26,9 +26,9 @@ public class CurrencyPage extends BasePage{
             $x("//div[@class='tbcx-dropdown-popover-item__title' and contains(text(), 'GEL')]");
 
     private final SelenideElement firstInput =
-            $$x("//input[@type='number']").get(0);
+            $$x("//input[@type='text']").get(0);
 
     private final SelenideElement secondInput =
-            $$x("//input[@type='number']").get(1);
+            $$x("//input[@type='text']").get(1);
 
 }
